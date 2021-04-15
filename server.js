@@ -4,7 +4,7 @@ const path = require('path');
 const express = require('express');
 const { notes } = require('./db/db');
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5001;
 const app = express();
 
 // parse incoming string or array data
