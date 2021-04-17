@@ -3,6 +3,7 @@ const path = require('path');
 
 const express = require('express');
 const { notes } = require('./db/db');
+const { nanoid } = require('nanoid');
 
 const PORT = process.env.PORT || 5001;
 const app = express();
@@ -33,9 +34,8 @@ app.get('*', (req, res) => {
 
 app.post('/api/notes', (req, res) => {
     // req.body is where our incoming content will be
-    console.log(req);
-    // set id based on what the next index of the array will be
-    req.body.id = notes.length.toString();
+    // generates an unique ID from using nanoid npm pkg - length of 10 for this app
+    req.body.id = nanoid(10);
 
     // if any data in req.body is incorrect, send 400 error back
     if (!validateNotes(req.body)) {
@@ -46,6 +46,7 @@ app.post('/api/notes', (req, res) => {
         res.json(note);
     }
 });
+
 
 function createNewNote(body, notesArray) {
     const note = body;
@@ -89,7 +90,7 @@ app.delete('/api/notes/:id', (req, res) => {
     if (result) {
         deleteNote(req.params.id, notes);
     } else {
-        res.send(404);
+        res.sendStatus(404);
     }
 });
 
