@@ -1,1 +1,13 @@
-[{"title":"Test Title","text":"Test text"}]
+{
+  "notes": [
+    {
+      "title": "Cancel credit card",
+      "text": "cancel american express credit card"
+    },
+    {
+      "title": "Take out garbage",
+      "text": "take out garbage in kitchen and in bathrooms",
+      "id": "1"
+    }
+  ]
+}
