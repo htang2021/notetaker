@@ -33,7 +33,7 @@ app.get('*', (req, res) => {
 
 app.post('/api/notes', (req, res) => {
     // req.body is where our incoming content will be
-
+    console.log(req);
     // set id based on what the next index of the array will be
     req.body.id = notes.length.toString();
 
