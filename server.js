@@ -68,7 +68,32 @@ function validateNotes(note) {
     return true;
 }
 
+function findById(id, notesArray) {
+    const result = notesArray.filter(note => note.id === id)[0];
+    return result;
+}
 
+function deleteNote(noteId, notesArray) {
+    console.log("This is note ID: " + noteId);
+    notesArray.splice(noteId, 1);
+    fs.writeFileSync(
+        path.join(__dirname, './db/db.json'),
+        JSON.stringify({ notes: notesArray }, null, 2)
+    );
+    return notesArray;
+}
+// route to delete by id, which is the element index # assigned 
+// when note is created
+app.delete('/api/notes/:id', (req, res) => {
+    const result = findById(req.params.id, notes);
+    if (result) {
+        deleteNote(req.params.id, notes);
+    } else {
+        res.send(404);
+    }
+});
+
+// listening port for all incoming get, post, delete requests
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}!`);
 });
