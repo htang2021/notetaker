@@ -51,7 +51,7 @@ This instruction below assumes that a project and repo were already created on g
     origin  git@github.com:htang2021/notetaker.git (fetch)  
     origin  git@github.com:htang2021/notetaker.git (push)
 
-6. Create a deployment instance from CLI, "$ heroku create <unique-app-name>", and check to make sure it's created:  
+6. Create a deployment instance from CLI, "$ heroku create htang-notetaker" (htang-notetaker is the app name - must be unique on heroku), and check to make sure it's created:  
   
     $ heroku apps  
     === hungtang@hotmail.com Apps  
