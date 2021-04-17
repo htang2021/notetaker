@@ -45,16 +45,16 @@ This instruction below assumes that a project and repo were already created on g
 4. Perform git add, commit, and push as appropriate to baseline the deployment repository
 5. Create a Heroku account, if not already, and verify that the heroku repository is visible by issuing $ git remote -v (or reference the heroku website for more details):
 ----------------
-$ git remote -v
-heroku  https://git.heroku.com/htang-notetaker.git (fetch)
-heroku  https://git.heroku.com/htang-notetaker.git (push)
-origin  git@github.com:htang2021/notetaker.git (fetch)
-origin  git@github.com:htang2021/notetaker.git (push)
+    $ git remote -v
+    heroku  https://git.heroku.com/htang-notetaker.git (fetch)
+    heroku  https://git.heroku.com/htang-notetaker.git (push)
+    origin  git@github.com:htang2021/notetaker.git (fetch)
+    origin  git@github.com:htang2021/notetaker.git (push)
 6. Create a deployment instance from CLI, $ heroku create <unique-app-name>, and check to make sure it's created:
------------------
-$ heroku apps
-=== hungtang@hotmail.com Apps
-htang-notetaker
+    -----------------
+    $ heroku apps
+    === hungtang@hotmail.com Apps
+    htang-notetaker
 7. 
 4. Wait for a minute or two, GitHub will return a live site URL:
 https://htang-notetaker.herokuapp.com/
