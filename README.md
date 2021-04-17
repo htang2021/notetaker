@@ -44,6 +44,7 @@ This instruction below assumes that a project and repo were already created on g
 3. Verify, or create if needed, that .gitignore include node_modules/, .DS_Store, and package-lock.json entries at the minimum
 4. Perform git add, commit, and push as appropriate to baseline the deployment repository
 5. Create a Heroku account, if not already, and verify that the heroku repository is visible (or reference the heroku website for more details):  
+  
     $ git remote -v  
     heroku  https://git.heroku.com/htang-notetaker.git (fetch)  
     heroku  https://git.heroku.com/htang-notetaker.git (push)  
@@ -51,6 +52,7 @@ This instruction below assumes that a project and repo were already created on g
     origin  git@github.com:htang2021/notetaker.git (push)
 
 6. Create a deployment instance from CLI, "$ heroku create <unique-app-name>", and check to make sure it's created:  
+  
     $ heroku apps  
     === hungtang@hotmail.com Apps  
     htang-notetaker  
