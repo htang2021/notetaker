@@ -11,7 +11,6 @@ app.use(express.json());
 
 app.use(express.static('public'));
 app.use('/', routes);
-app.use('/api', routes);
 app.use('/notes', routes);
 
 // listening port for all incoming get, post, delete requests
