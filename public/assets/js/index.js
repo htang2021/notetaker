@@ -93,7 +93,7 @@ const handleNoteDelete = (e) => {
     getAndRenderNotes();
     renderActiveNote();
   });
-  //getAndRenderNotes(); // adding this re-enforcement to fix a seemingly intermittent issue of note list not updating after deletion.
+  getAndRenderNotes(); // adding this re-enforcement to fix a seemingly intermittent issue of note list not updating after deletion.
 };
 
 // Sets the activeNote and displays it
@@ -118,9 +118,6 @@ const handleRenderSaveBtn = () => {
 };
 
 // Render the list of note titles
-// const renderNoteList = (notes) => {
-//   let jsonNotes = notes.json();
-
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
   if (window.location.pathname === '/notes') {
