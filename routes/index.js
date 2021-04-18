@@ -1,4 +1,5 @@
-const router = require('express').router();
+const express = require('express');
+const router = express.Router();
 const path = require('path');
 
 const { nanoid } = require('nanoid');
@@ -13,11 +14,11 @@ const {
 router.use(express.json());
 
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/index.html'));
+    res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 router.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/notes.html'));
+    res.sendFile(path.join(__dirname, '../public/notes.html'));
 });
 
 router.get('/api/notes', (req, res) => {
@@ -25,7 +26,7 @@ router.get('/api/notes', (req, res) => {
 });
 
 router.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/index.html'));
+    res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 router.post('/api/notes', (req, res) => {

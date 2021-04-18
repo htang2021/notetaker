@@ -1,4 +1,4 @@
-const routes = require('/routes');
+const routes = require('./routes');
 const express = require('express');
 
 const PORT = process.env.PORT || 5001;
@@ -10,9 +10,9 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
 app.use(express.static('public'));
-app.use('/routes', routes);
-// app.use('/api', routes);
-// app.use('/notes', routes);
+app.use('/', routes);
+app.use('/api', routes);
+app.use('/notes', routes);
 
 // listening port for all incoming get, post, delete requests
 app.listen(PORT, () => {
