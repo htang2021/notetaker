@@ -93,6 +93,7 @@ const handleNoteDelete = (e) => {
     getAndRenderNotes();
     renderActiveNote();
   });
+  getAndRenderNotes(); // adding this re-enforcement to fix a seemingly intermittent issue of note list not updating after deletion.
 };
 
 // Sets the activeNote and displays it
